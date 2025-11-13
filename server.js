@@ -28,6 +28,19 @@ app.get("/characters", (req, res) => {
   });
 });
 
+// POST /usuarios → insere um novo usuário no banco
+app.post("/characters", (req, res) => {
+  const { classe, inteligencia, carisma, constituicao, forca, destreza, sabedoria} = req.body; // Extrai os dados enviados pelo front
+  db.query(
+    "INSERT INTO characters (classe, inteligencia, carisma, constituicao, forca, destreza, sabedoria) VALUES (?, ?, ?, ?, ?, ?, ?)", // Query SQL com placeholders
+    [classe, inteligencia, carisma, constituicao, forca, destreza, sabedoria], // Valores que substituem os "?"
+    (err, result) => {
+      if (err) throw err;
+      res.json({ message: "Classe adicionada com sucesso!" }); // Retorno de sucesso
+    }
+  );
+});
+
 // Inicia o servidor na porta 3000
 app.listen(3000, () =>
   console.log("Servidor rodando em http://localhost:3000")
