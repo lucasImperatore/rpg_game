@@ -41,6 +41,25 @@ app.post("/characters", (req, res) => {
   );
 });
 
+app.delete("/characters/:classe", (req, res) => {
+  const classe = req.params.classe;
+
+  db.query(
+    "DELETE FROM characters WHERE classe = ?",
+    [classe],
+    (err, result) => {
+      if (err) throw err;
+
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ message: "Classe não encontrada" });
+      }
+
+      res.json({ message: "Classe deletada com sucesso!" });
+    }
+  );
+});
+
+
 // Inicia o servidor na porta 3000
 app.listen(3000, () =>
   console.log("Servidor rodando em http://localhost:3000")

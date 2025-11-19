@@ -1,5 +1,5 @@
 async function carregaDados(){
-    let pesquisa = document.getElementById("pesquisa").value;
+    let pesquisa = document.getElementById("pesquisa").value.toLowerCase();
     let url = `http://localhost:3000/characters`
     let forca = document.getElementById("for");
     let dex = document.getElementById("dex");
@@ -8,6 +8,9 @@ async function carregaDados(){
     let sab = document.getElementById("sab");
     let int = document.getElementById("int");
     let classe = document.getElementById("Classe");
+    
+
+    
 
  await   fetch(url)
 .then((Response)=>{
@@ -18,7 +21,7 @@ async function carregaDados(){
 
       for(let i = 0; i < data.length; i++){
 
-        if(data[i].classe == pesquisa){
+        if(data[i].classe.toLowerCase() == pesquisa){
         
           classe.innerHTML =  `CLASSE: ${data[i].classe}`
           forca.innerHTML = `FOR: ${data[i].forca}`
@@ -26,7 +29,7 @@ async function carregaDados(){
           con.innerHTML = `CON: ${data[i].constituicao}`
           car.innerHTML = `CAR: ${data[i].carisma}`
           sab.innerHTML = `SAB: ${data[i].sabedoria}`
-          int.innerHTML = `INt: ${data[i].inteligencia}`
+          int.innerHTML = `INT: ${data[i].inteligencia}`
     }else{
       // alert("sua pesquisa nao foi encontrada")
     }
@@ -34,6 +37,16 @@ async function carregaDados(){
    
 })
 }
+
+async function deletar() {
+  let deleta = document.getElementById("classDelete").value.toLowerCase();
+
+  const response = await fetch(`http://localhost:3000/characters/${deleta}`, {
+    method: "DELETE",
+  });
+
+  const result = await response.json();
+  alert(result.message)};
 
 // Função para enviar novo usuário
 form.addEventListener("submit", async (e) => {
@@ -47,15 +60,20 @@ form.addEventListener("submit", async (e) => {
   const destreza = document.getElementById("destreza").value;
   const sabedoria = document.getElementById("sabedoria").value;
 
+  if(classe !==""){
+
   await fetch("/characters", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ classe, inteligencia, carisma, constituicao, forca, destreza, sabedoria }), // manda o objeto js para o banco como json
-  });
+    body: JSON.stringify({ classe, inteligencia, carisma, constituicao, forca, destreza, sabedoria }),
+    // alert ("classe adicionada") // manda o objeto js para o banco como json
+  })}else{
+
+  }
 
   form.reset(); // limpa os campos com a função nativa para tags form
   carregaDados(); // atualiza lista
 });
 
 // Carrega ao abrir a página
-// carregaDados();
+carregaDados();
