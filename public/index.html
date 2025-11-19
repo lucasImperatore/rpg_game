@@ -10,7 +10,7 @@
 
 <body>
     
-    <div class="container text-center">
+    <div class="container-fluid text-center">
     <div class="row align-items-start">
     <div class="col">
       <h1>DUNGEON ADVENTURE</h1>
@@ -19,43 +19,80 @@
     <FIeldset>
       <div class="container text-center">
       <div class="row align-items-start">
-      <div class="col" -2></div>
+      <div class="col-2" ></div>
 
-      <div class="col" -8>
+      <div class="col-8" >
         <p id="Classe">CLASSE</p> 
       </div>
-        <div class="col" -2></div>
+        <div class="col-2" ></div>
       </div>
       </div>
 
-      <div class="container text-center">
-      <div class="row align-items-start">
+      <div class="container-fluid text-center">
+        <div class="row" >
 
-      <div class="col text-center" id="cor1">
-      <p id="for">FOR</p>
-      </div> 
-      <div class="col" id="cor2">
-      <P id="dex">DEX</P>
+          <div class="col-3">
+          <p></p>
+          </div> 
+          <div class="col-2 cor1">
+          <p id="for">FOR</p>
+          </div> 
+          <div class="col-2 cor2">
+          <P id="dex">DEX</P>
+          </div>
+          <div class="col-2 cor3">
+          <P id="con">CON</P>
+          </div>
+          <div class="col-3">
+          <p></p>
+          </div> 
+        </div>
       </div>
-      <div class="col" id="cor3">
-      <P id="con">CON</P>
-      </div>
-      <div class="col" id="cor4">
-      <P id="car">CAR</P>
-      </div>
-      <div class="col cor5">
-      <P id="sab">SAB</P>
-      </div>
-      <div class="col cor6">
-      <P id="int">INT</P>
-      </div>
-      </div>
+
+      <div class="container-fluid text-center">
+        <div class="row" >
+
+          <div class="col-3">
+          <p></p>
+          </div> 
+          <div class="col-2 cor4">
+          <P id="car">CAR</P>
+          </div>
+          <div class="col-2 cor5">
+          <P id="sab">SAB</P>
+          </div>
+          <div class="col-2  cor6">
+          <P id="int">INT</P>
+          </div>
+          <div class="col-3">
+          <p></p>
+          </div> 
+        </div>
       </div>
       
     </FIeldset>
     
-    <input id="pesquisa" type="text" placeholder="INSIRA A CLASSE">
-    <BUtton id="botao" onclick="carregaDados()">PESQUISAR</BUtton>
+
+    <div class="container text-center">
+      <div class="row align-items-center">
+
+        <div class="col-3">
+          <p></p>
+          </div> 
+        <div class="col-3 align-self-start">
+          <input id="pesquisa" type="text" placeholder="INSIRA A CLASSE">
+        </div>
+
+        <div class="col-2">
+          <BUtton id="botao" onclick="carregaDados()">PESQUISAR</BUtton>
+        </div>
+        <div class="col-3">
+          <p></p>
+          </div> 
+    </div>
+    
+    
+    
      
     <h2>Cadastrar classe</h2>
       <form id="form">

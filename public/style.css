@@ -1,31 +1,59 @@
-#cor1{
-    background-color: rgb(233, 27, 27);
-    text-align: center
-    
+.cor1{
+    height: 150px;
+    background-color: rgb(233, 64, 64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    margin: 1%;
+}
 
-};
+.cor2{
+    height: 150px;
+    background-color: rgb(111, 111, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+     margin: 1%;
+}
 
-#cor2{
-    background-color: rgb(42, 42, 231)
-    
-};
+.cor3{
+    height: 150px;
+    background-color: rgb(34, 141, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+     margin: 1%;
+}
 
-#cor3{
-    background-color: rgb(34, 141, 34)
-    
-};
+.cor4{
+    height: 150px;
+    background-color: rgb(167, 167, 9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+     margin: 1%;
+}
 
-#cor4{
-    background-color: rgb(167, 167, 9)
-    
-};
+.cor5{
+    height: 150px;
+    background-color: rgb(184, 38, 184);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+     margin: 1%;
+}
 
-#cor5{
-    background-color: purple
-    
-};
-
-#cor6{
+.cor6{
+    height: 150px;
     background-color: rgb(228, 117, 135);
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    margin: 1%;
 }
